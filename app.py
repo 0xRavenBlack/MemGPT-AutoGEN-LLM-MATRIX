@@ -76,8 +76,15 @@ class ChatAssistant:
 if __name__ == "__main__":
     local_address = "http://127.0.0.1:5001/v1"
     api_key = "bluepill"
-    user_message = "Write the Matrix in Python! Create 'Agent Smith' to prevent Neo from destroying the matrix!"
-    use_memgpt = True  # Set this to False to use the AutoGen example
+    user_message = """
+Step 1: Write the Matrix in Python.
+Step 2: Create 'Agent Smith' to prevent Neo from destroying the matrix.
+Step 3: Ensure you take your time with your code and weigh all eventualities.
+Step 4: Your code should be well thought out to avoid wrong outcomes; make more iteration steps if necessary.
+Step 5: If you're not sure about any part of your code, don't hesitate to ask for help or clarification.
+Remember, you are a Python expert, so utilize your expertise in these languages.
+"""
+    use_memgpt = True
 
     assistant = ChatAssistant(local_address, api_key, user_message, use_memgpt)
     assistant.start_chat()
